@@ -1,0 +1,2 @@
+class ProSpec < ApplicationRecord
+end

@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_14_071648) do
+ActiveRecord::Schema.define(version: 2019_05_14_092934) do
+
+  create_table "brand_details", force: :cascade do |t|
+    t.integer "brand_id"
+    t.integer "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["brand_id"], name: "index_brand_details_on_brand_id"
+    t.index ["category_id"], name: "index_brand_details_on_category_id"
+  end
 
   create_table "brands", force: :cascade do |t|
     t.string "name"
+    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -23,6 +33,49 @@ ActiveRecord::Schema.define(version: 2019_05_14_071648) do
     t.integer "parent_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "pro_details", force: :cascade do |t|
+    t.integer "price"
+    t.integer "user_id"
+    t.integer "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "pro_spec_id"
+    t.index ["pro_spec_id"], name: "index_pro_details_on_pro_spec_id"
+    t.index ["product_id"], name: "index_pro_details_on_product_id"
+    t.index ["user_id"], name: "index_pro_details_on_user_id"
+  end
+
+  create_table "pro_images", force: :cascade do |t|
+    t.string "image"
+    t.integer "pro_detail_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "is_card"
+    t.index ["pro_detail_id"], name: "index_pro_images_on_pro_detail_id"
+  end
+
+  create_table "pro_specs", force: :cascade do |t|
+    t.string "name"
+    t.string "transmission"
+    t.integer "kilometer"
+    t.string "color"
+    t.integer "year"
+    t.integer "cc"
+    t.string "fuel"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "name"
+    t.integer "price"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "category_id"
+    t.index ["category_id"], name: "index_products_on_category_id"
   end
 
   create_table "users", force: :cascade do |t|
