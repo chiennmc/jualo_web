@@ -20,7 +20,7 @@ User.create!(
 	password_confirmation: 	"123456",
 )
 
-14.times do |n|
+40.times do |n|
 	name_1 		= "Car"
 	name_2 		= "Motor"
 	name_3 		= "Fashion"
@@ -31,7 +31,7 @@ User.create!(
 	
 	Category.create!(
 		name: 			arr_name.sample,
-		parent_id: 	rand(1..3)
+		parent_id: 	rand(0..8)
 	)
 end
 
@@ -46,7 +46,6 @@ end
     fuel:         "Fuel"
   )
 end
-
 
 # Create brand
 Brand.create!(
@@ -88,3 +87,53 @@ Brand.create!(
   name:  "Daihatsu",
   image: "https://www.jualo.com/assets/milan_version/brand_image/Car_Brands/daihatsu2x-07b9488fe93dc9024543b9c033d5c98eb7088a52f1596bd9269f1641e26e6413.png"
 )
+
+30.times do |n|
+  BrandDetail.create!(
+    brand_id:    rand(1..8),
+    category_id: rand(1..3)
+  )
+end
+
+30.times do |n|
+  status_1 = "in stock"
+  status_2 = "out of stock"
+  arr_status = [status_1, status_2]
+
+  name_1 = "Dream #{rand(1..10)}"
+  name_2 = "Xmax #{rand(1..10)}"
+  name_3 = "Wave #{rand(1..10)}"
+  name_4 = "Lead #{rand(1..10)}"
+  arr_name = [name_1, name_2, name_3, name_4]
+
+  Product.create!(
+    name:        arr_name.sample,
+    price:       rand(1..15) * 10_000_000,
+    status:      arr_status.sample,
+    category_id: rand(1..10)
+  )
+end
+
+
+1000.times do |n|
+  ProDetail.create!(
+    price:       rand(1..15) * 10_000_000,
+    user_id:     rand(1..2),
+    product_id:  rand(1..20),
+    pro_spec_id: rand(1..30)
+  )
+end
+
+150.times do |n|
+  image_1 = "https://chugiong.com/uploads/super-dream-110cc-bac-ninh-14949059737862982.jpg"
+  image_2 = "https://autopro56.mediacdn.vn/2017/092117-2018-yamaha-xmax-300-2-768x545-1506411063540.jpg"
+  image_3 = "https://giaxe.2banh.vn/cache/dataupload/products/slides/520_368_0fb318f5de78797f7c1ebda4d3394fd0.JPG"
+  image_4 = "https://img.vietnamfinance.vn/thumbs/700x0/upload/news/ledinhnga/2018/11/28/e-am-honda-lead-2016-duoc-dai-ly-ban-ra-duoi-gia-de-xuat1468493158.jpg"
+  arr_image = [image_1, image_2, image_3, image_4]
+
+  ProImage.create!(
+    image:         arr_image.sample,
+    pro_detail_id: rand(1..30),
+    is_card:       false
+  )
+end

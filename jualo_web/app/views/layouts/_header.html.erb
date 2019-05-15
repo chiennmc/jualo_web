@@ -1,0 +1,376 @@
+<header class="full-width header-fixed-top bg-header">
+  <div class="container main-header">
+    <div class="row">
+      <div class="col-12">
+        <div class="pull-left">
+          <div class="main-header__logo">
+            <h1 title="Jualo.com Teman Jual Belimu">
+              <%= link_to root_path do %>
+                <%= image_tag ("https://www.jualo.com/assets/milan_version/header-logo-white-6a883b85e00ccc9adbb5b25e7ab01687b84414e86ec94c6740e0c7501e8f38e9.png") %>
+              <% end %>
+            </h1>
+          </div>
+        </div>
+        <div class="pull-right">
+          <div class="main-header__location">
+            <span class="icon icon_lokasi"></span>
+            <span class="location-name">pilih lokasi</span>
+            <span class="icon-dropdown icon_dropdown-white"></span>
+          </div>
+          <div class="location-dropdown">
+            <div class="location-dropdown__container" id="location-dropdown__container">
+              <div class="location-dropdown__input">
+                <input autocomplete="off" class="search_location_field" name="lokasi" placeholder="Ketik Lokasi Anda..."
+                  type="text">
+                <span class="icon">x</span>
+              </div>
+              <ul class="location-dropdown__list" data-controller="home">
+                <li>
+                  <a data-id="all" data-name="semua lokasi" data-type="all">
+                    Semua Lokasi
+                  </a>
+                </li>
+                <li>
+                  <a data-id="17" data-name="Aceh" data-type="state">
+                    Aceh
+                  </a>
+                </li>
+                <li>
+                  <a data-id="13" data-name="Bali" data-type="state">
+                    Bali
+                  </a>
+                </li>
+                <li>
+                  <a data-id="8" data-name="Banten" data-type="state">
+                    Banten
+                  </a>
+                </li>
+                <li>
+                  <a data-id="21" data-name="Bengkulu" data-type="state">
+                    Bengkulu
+                  </a>
+                </li>
+                <li>
+                  <a data-id="1" data-name="DKI Jakarta" data-type="state">
+                    DKI Jakarta
+                  </a>
+                </li>
+                <li>
+                  <a data-id="18" data-name="Gorontalo" data-type="state">
+                    Gorontalo
+                  </a>
+                </li>
+                <li>
+                  <a data-id="14" data-name="Jambi" data-type="state">
+                    Jambi
+                  </a>
+                </li>
+                <li>
+                  <a data-id="2" data-name="Jawa Barat" data-type="state">
+                    Jawa Barat
+                  </a>
+                </li>
+                <li>
+                  <a data-id="4" data-name="Jawa Tengah" data-type="state">
+                    Jawa Tengah
+                  </a>
+                </li>
+                <li>
+                  <a data-id="3" data-name="Jawa Timur" data-type="state">
+                    Jawa Timur
+                  </a>
+                </li>
+                <li>
+                  <a data-id="28" data-name="Kalimantan Barat" data-type="state">
+                    Kalimantan Barat
+                  </a>
+                </li>
+                <li>
+                  <a data-id="26" data-name="Kalimantan Selatan" data-type="state">
+                    Kalimantan Selatan
+                  </a>
+                </li>
+                <li>
+                  <a data-id="12" data-name="Kalimantan Tengah" data-type="state">
+                    Kalimantan Tengah
+                  </a>
+                </li>
+                <li>
+                  <a data-id="7" data-name="Kalimantan Timur" data-type="state">
+                    Kalimantan Timur
+                  </a>
+                </li>
+                <li>
+                  <a data-id="34" data-name="Kalimantan Utara" data-type="state">
+                    Kalimantan Utara
+                  </a>
+                </li>
+                <li>
+                  <a data-id="15" data-name="Kep. Bangka Belitung" data-type="state">
+                    Kep. Bangka Belitung
+                  </a>
+                </li>
+                <li>
+                  <a data-id="9" data-name="Kep. Riau" data-type="state">
+                    Kep. Riau
+                  </a>
+                </li>
+                <li>
+                  <a data-id="16" data-name="Lampung" data-type="state">
+                    Lampung
+                  </a>
+                </li>
+                <li>
+                  <a data-id="30" data-name="Maluku" data-type="state">
+                    Maluku
+                  </a>
+                </li>
+                <li>
+                  <a data-id="31" data-name="Maluku Utara" data-type="state">
+                    Maluku Utara
+                  </a>
+                </li>
+                <li>
+                  <a data-id="22" data-name="Nusa Tenggara Barat" data-type="state">
+                    Nusa Tenggara Barat
+                  </a>
+                </li>
+                <li>
+                  <a data-id="29" data-name="Nusa Tenggara Timur" data-type="state">
+                    Nusa Tenggara Timur
+                  </a>
+                </li>
+                <li>
+                  <a data-id="19" data-name="Papua" data-type="state">
+                    Papua
+                  </a>
+                </li>
+                <li>
+                  <a data-id="32" data-name="Papua Barat" data-type="state">
+                    Papua Barat
+                  </a>
+                </li>
+                <li>
+                  <a data-id="24" data-name="Riau" data-type="state">
+                    Riau
+                  </a>
+                </li>
+                <li>
+                  <a data-id="33" data-name="Sulawesi Barat" data-type="state">
+                    Sulawesi Barat
+                  </a>
+                </li>
+                <li>
+                  <a data-id="11" data-name="Sulawesi Selatan" data-type="state">
+                    Sulawesi Selatan
+                  </a>
+                </li>
+                <li>
+                  <a data-id="27" data-name="Sulawesi Tengah" data-type="state">
+                    Sulawesi Tengah
+                  </a>
+                </li>
+                <li>
+                  <a data-id="25" data-name="Sulawesi Tenggara" data-type="state">
+                    Sulawesi Tenggara
+                  </a>
+                </li>
+                <li>
+                  <a data-id="20" data-name="Sulawesi Utara" data-type="state">
+                    Sulawesi Utara
+                  </a>
+                </li>
+                <li>
+                  <a data-id="23" data-name="Sumatera Barat" data-type="state">
+                    Sumatera Barat
+                  </a>
+                </li>
+                <li>
+                  <a data-id="10" data-name="Sumatera Selatan" data-type="state">
+                    Sumatera Selatan
+                  </a>
+                </li>
+                <li>
+                  <a data-id="5" data-name="Sumatera Utara" data-type="state">
+                    Sumatera Utara
+                  </a>
+                </li>
+                <li>
+                  <a data-id="6" data-name="Yogyakarta" data-type="state">
+                    Yogyakarta
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="location-dropdown__scroll-down">
+              <span class="icon icon_dropdown-black"></span>
+            </div>
+          </div>
+          <!-- <div class="location-popup">
+            <p>
+              Ganti lokasi kamu di sini, untuk mendapatkan hasil yang lebih akurat
+            </p>
+            <span class="icon icon_close-white"></span>
+          </div> -->
+          <div class="main-header__search">
+            <form action="/categories/search/" class="search" method="post">
+              <input class="hidden" id="search" name="search" type="text" value="">
+              <input class="hidden" id="category" name="category" type="text">
+              <span class="twitter-typeahead" style="position: relative; display: inline-block;"><input
+                  autocomplete="off" class="js-searchbox tt-input"
+                  data-suggest-url="https://www.jualo.com/categories/add_search_suggestion" id="keyword" name="keyword"
+                  placeholder="cari iklan" type="text" spellcheck="false" dir="auto"
+                  style="position: relative; vertical-align: top;">
+                <pre aria-hidden="true"
+                  style="position: absolute; visibility: hidden; white-space: pre; font-family: ArialMT; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: capitalize;"></pre>
+                <div class="tt-menu suggest-custom-menu"
+                  style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none;">
+                  <div class="tt-dataset tt-dataset-best-pictures"></div>
+                </div></span>
+              <div class="icon_w_loader_header">
+                <i class="fa fa-spinner fa-spin"></i>
+              </div>
+              <div class="clear-search js-clear-w-input-search">
+                <span class="icon icon_close_fix"></span>
+              </div>
+              <span class="icon icon_close hide" onclick="clear_category()"></span>
+              <div class="search-category">
+                <input class="hidden" name="category" type="text">
+                <span class="category-name">
+                  semua kategori
+                </span>
+                <span class="icon icon_dropdown-black"></span>
+                <div class="category-dropdown">
+                  <ul class="category-dropdown__list">
+                    <li class="list-category col-12" data-id="127"
+                      onclick="document.cookie='category_ids=127_59_40_57_119_38_79_42'">
+                      <span class="icon icon_kategori-motor"></span>
+                      Motor
+                    </li>
+                    <li class="list-category col-12" data-id="59"
+                      onclick="document.cookie='category_ids=127_59_40_57_119_38_79_42'">
+                      <span class="icon icon_kategori-mobil"></span>
+                      Mobil
+                    </li>
+                    <li class="list-category col-12" data-id="40"
+                      onclick="document.cookie='category_ids=127_59_40_57_119_38_79_42'">
+                      <span class="icon icon_kategori-properti"></span>
+                      Properti
+                    </li>
+                    <li class="list-category col-12" data-id="57"
+                      onclick="document.cookie='category_ids=127_59_40_57_119_38_79_42'">
+                      <span class="icon icon_kategori-fashion"></span>
+                      Fashion
+                    </li>
+                    <li class="list-category col-12" data-id="119"
+                      onclick="document.cookie='category_ids=127_59_40_57_119_38_79_42'">
+                      <span class="icon icon_kategori-handphone-dan-gadget"></span>
+                      Handphone &amp; Gadget
+                    </li>
+                    <li class="list-category col-12" data-id="38"
+                      onclick="document.cookie='category_ids=127_59_40_57_119_38_79_42'">
+                      <span class="icon icon_kategori-kamera"></span>
+                      Kamera
+                    </li>
+                    <li class="list-category col-12" data-id="79"
+                      onclick="document.cookie='category_ids=127_59_40_57_119_38_79_42'">
+                      <span class="icon icon_kategori-jasa-dan-pekerjaan"></span>
+                      Jasa &amp; Pekerjaan
+                    </li>
+                    <li class="list-category col-12" data-id="42"
+                      onclick="document.cookie='category_ids=127_59_40_57_119_38_79_42'">
+                      <span class="icon icon_kategori-komputer-dan-elektronik"></span>
+                      Komputer &amp; Elektronik
+                    </li>
+                    <li class="list-category col-12" data-id="66748"
+                      onclick="document.cookie='category_ids=127_59_40_57_119_38_79_42'">
+                      <span class="icon icon_kategori-hobi-dan-aktivitas-outdoor"></span>
+                      Hobi &amp; Aktivitas Outdoor
+                    </li>
+                    <li class="list-category col-12" data-id="75"
+                      onclick="document.cookie='category_ids=127_59_40_57_119_38_79_42'">
+                      <span class="icon icon_kategori-kesehatan-dan-kecantikan"></span>
+                      Kesehatan &amp; Kecantikan
+                    </li>
+                    <li class="list-category col-12" data-id="53"
+                      onclick="document.cookie='category_ids=127_59_40_57_119_38_79_42'">
+                      <span class="icon icon_kategori-rumah-tangga-dan-industri"></span>
+                      Rumah Tangga &amp; Industri
+                    </li>
+                    <li class="list-category col-12" data-id="63"
+                      onclick="document.cookie='category_ids=127_59_40_57_119_38_79_42'">
+                      <span class="icon icon_kategori-perlengkapan-ibu-dan-anak"></span>
+                      Perlengkapan Ibu &amp; Anak
+                    </li>
+                    <li class="list-category col-12" data-id="67311"
+                      onclick="document.cookie='category_ids=127_59_40_57_119_38_79_42'">
+                      <span class="icon icon_kategori-acara-dan-hiburan"></span>
+                      Acara dan Hiburan
+                    </li>
+                    <div class="all-category col-12">
+                      <a class="button button--green button--block button--rounded button--small"
+                        href="/categories">Lihat Selengkapnya
+                      </a></div>
+                  </ul>
+                </div>
+              </div>
+              <input class="button icon icon_search" onclick="setCookie('gtm_search', true);" type="submit">
+            </form>
+          </div>
+          <div class="main-header__placing-ad">
+            <a class="header_new_ad initiate-post-product" href="/iklan/pasang-iklan-gratis">
+              <span class="icon icon-pasang-iklan"></span>
+              <span class="text">Placing ad</span>
+            </a>
+          </div>
+          <div class="account-not-signin main-header__account" id="dropdown">
+            <span class="icon icon_akun"></span>
+            <span class="icon icon_akun2"></span>
+            <div class="account-dropdown">
+              <div class="account-dropdown__welcome">Welcome to Selling!</div>
+              <div class="account-dropdown__login">
+                <!-- <a class="button button--green" rel="nofollow" data-toggle="modal" data-target="#loginModal"
+                  href="#">
+                  LOGIN
+                </a> -->
+                <%= link_to  "LOGIN", new_user_session_path, 
+                  { class: "button button--green", ref: "nofollow", 
+                  "data-toggle": "modal", "data-target": "#loginModal" } 
+                %>
+              </div>
+              <div class="account-dropdown__login-with">or login with</div>
+              <div class="account-dropdown__social-media row">
+                <div class="col-6 facebook">
+                  <a class="fbpopup button button--facebook" data-height="400" data-width="600"
+                    href="/users/auth/facebook" id="fbpopup1" onclick="return open_authorization_windows(this);"
+                    rel="nofollow" rp="https://www.jualo.com/" target="_blank">
+                    facebook
+                  </a>
+                </div>
+                <div class="col-6 google">
+                  <a class="fbpopup button button--google" data-height="500" data-width="600" href="/users/auth/google"
+                    id="fbpopup1" onclick="return open_authorization_windows(this);" rel="nofollow"
+                    rp="https://www.jualo.com/" target="_blank">
+                    google+
+                  </a>
+                </div>
+              </div>
+              <div class="account-dropdown__line"></div>
+              <div class="account-dropdown__not-have">Do not have an account?</div>
+              <div class="account-dropdown__sign-in">
+                <!-- <a class="button button--orange" rel="nofollow" data-toggle="modal" data-target="#signupModal"
+                  href="#">
+                  DAFTAR
+                </a> -->
+                <%= link_to  "REGISTER", new_user_registration_path, 
+                  { class: "button button--orange", ref: "nofollow", 
+                  "data-toggle": "modal", "data-target": "#signupModal" } 
+                %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

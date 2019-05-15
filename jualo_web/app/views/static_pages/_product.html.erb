@@ -1,0 +1,390 @@
+<section class="full-width main-content home-category-ad-listing">
+  <div class="container">
+    <div class="row category-row">
+      <div class="col-12 category-listing__ads_title">
+        <div class="pull-left">
+          <span class="product-heading-text">Motor Sale Ads</span>
+        </div>
+        <div class="pull-right">
+          <div class="button-action text-center">
+            <%= link_to "See all", "/motor/baru-dan-bekas", class: "button button--small button--green" %>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="category-listing__ads">
+          <% @product_motors.each do |motor| %>
+            <div class="product-item">
+              <%= link_to  "#" do %>
+                <!-- <a href="https://www.jualo.com/motor-yamaha/iklan-yamaha-vega-zr-2009-4445469"> -->
+                  <div class="product-item__head">
+                    <div class="product-item__badge">
+                    </div>
+                    <div class="product-item__image">
+                      <%= image_tag "https://storage.jualo.com/big_thumb/19496363/yamaha-vega-zr-2009-motor-yamaha-19496363.jpg"%>
+                      <!-- <img alt="" backup_img="product"
+                        src="https://storage.jualo.com/big_thumb/19496363/yamaha-vega-zr-2009-motor-yamaha-19496363.jpg"> -->
+                      <span class="mask"></span>
+                    </div>
+                  </div>
+                  <div class="product-item__body">
+                    <div class="product-item__name">
+                      <%= link_to  motor.name %>
+                    </div>
+                    <div class="product-item__price">
+                        <%= link_to  motor.price %> VND
+                    </div>
+                  </div>
+                <!-- </a> -->
+                <% end %>
+                <div class="favourite-badge icon_fav1" data-ad-id="1783635315" onclick="add_to_wishlist(this)"></div>
+              </div> 
+          <% end %>
+          <!-- <div class="product-item">
+            <a href="https://www.jualo.com/motor-yamaha/iklan-yamaha-vega-zr-2009-4445469">
+              <div class="product-item__head">
+                <div class="product-item__badge">
+                </div>
+                <div class="product-item__image">
+                  <img alt="" backup_img="product"
+                    src="https://storage.jualo.com/big_thumb/19496363/yamaha-vega-zr-2009-motor-yamaha-19496363.jpg">
+                  <span class="mask"></span>
+                </div>
+              </div>
+              <div class="product-item__body">
+                <div class="product-item__name">
+                  Yamaha VEGA ZR 2009
+                </div>
+                <div class="product-item__price">
+                  Rp. 4.150.000
+                </div>
+              </div>
+            </a>
+            <div class="favourite-badge icon_fav1" data-ad-id="1783635315" onclick="add_to_wishlist(this)"></div>
+          </div> -->
+
+        </div>
+      </div>
+    </div>
+    <div class="row category-row">
+      <div class="col-12 category-listing__ads_title">
+        <div class="pull-left">
+          <span class="product-heading-text">Mobil Sale ads</span>
+        </div>
+        <div class="pull-right">
+          <div class="button-action text-center">
+            <a class="button button--small button--green" href="/mobil/bekas-dan-baru">See all</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="category-listing__ads">
+          <div class="product-item">
+            <a
+              href="https://www.jualo.com/mobil-suzuki/iklan-promo-suzuki-ertiga-terbaru-diskon-puluhan-juta-harga-terbaik-se-jakarta">
+              <div class="product-item__head">
+                <div class="product-item__badge">
+                  <div class="premium-badge icon_premium"></div>
+                </div>
+                <div class="product-item__image">
+                  <img alt="" backup_img="product"
+                    src="https://storage.jualo.com/big_thumb/19849911/promo-suzuki-ertiga-t-mobil-suzuki-19849911.jpg">
+                  <span class="mask"></span>
+                </div>
+              </div>
+              <div class="product-item__body">
+                <div class="product-item__name">
+                  PROMO SUZUKI ERTIGA TERBARU DISKON PULUHAN JUTA HARGA TERBAIK SE JAKARTA
+                </div>
+                <div class="product-item__price">
+                  Rp. 185.000.000
+                </div>
+              </div>
+            </a>
+            <div class="favourite-badge icon_fav1" data-ad-id="1783748783" onclick="add_to_wishlist(this)"></div>
+          </div>
+
+          <div class="product-item">
+            <a href="https://www.jualo.com/mobil-nissan/iklan-nissan-march-nismo-2013">
+              <div class="product-item__head">
+                <div class="product-item__badge">
+                  <div class="premium-badge icon_premium"></div>
+                </div>
+                <div class="product-item__image">
+                  <img alt="" backup_img="product"
+                    src="https://storage.jualo.com/big_thumb/19971911/nissan-march-nismo-20-mobil-nissan-19971911.jpg">
+                  <span class="mask"></span>
+                </div>
+              </div>
+              <div class="product-item__body">
+                <div class="product-item__name">
+                  Nissan March Nismo 2013
+                </div>
+                <div class="product-item__price">
+                  Rp. 100.000.000
+                </div>
+              </div>
+            </a>
+            <div class="favourite-badge icon_fav1" data-ad-id="1783788491" onclick="add_to_wishlist(this)"></div>
+          </div>
+
+          <div class="product-item">
+            <a href="https://www.jualo.com/mobil-ford/iklan-ambulance-081288745582">
+              <div class="product-item__head">
+                <div class="product-item__badge">
+                </div>
+                <div class="product-item__image">
+                  <img alt="" backup_img="product"
+                    src="https://storage.jualo.com/big_thumb/1761576/ambulance-08128874558-mobil-ford-1761576.jpg">
+                  <span class="mask"></span>
+                </div>
+              </div>
+              <div class="product-item__body">
+                <div class="product-item__name">
+                  Ambulance 081288745582
+                </div>
+                <div class="product-item__price">
+                  Rp. 550.000.000
+                </div>
+              </div>
+            </a>
+            <div class="favourite-badge icon_fav1" data-ad-id="1778391328" onclick="add_to_wishlist(this)"></div>
+          </div>
+
+          <div class="product-item">
+            <a href="https://www.jualo.com/mobil-mitsubishi/iklan-menjual-ambulance-spgdt">
+              <div class="product-item__head">
+                <div class="product-item__badge">
+                </div>
+                <div class="product-item__image">
+                  <img alt="" backup_img="product"
+                    src="https://storage.jualo.com/big_thumb/1770929/menjual-ambulance-spg-mobil-mitsubishi-1770929.jpg">
+                  <span class="mask"></span>
+                </div>
+              </div>
+              <div class="product-item__body">
+                <div class="product-item__name">
+                  Menjual Ambulance SPGDT
+                </div>
+                <div class="product-item__price">
+                  Rp. 950.000.000
+                </div>
+              </div>
+            </a>
+            <div class="favourite-badge icon_fav1" data-ad-id="1778394569" onclick="add_to_wishlist(this)"></div>
+          </div>
+
+          <div class="product-item">
+            <a href="https://www.jualo.com/mobil-mitsubishi/iklan-ambulance-mitsubishi-strada-triton">
+              <div class="product-item__head">
+                <div class="product-item__badge">
+                </div>
+                <div class="product-item__image">
+                  <img alt="" backup_img="product"
+                    src="https://storage.jualo.com/big_thumb/2207971/ambulance-mitsubishi-mobil-mitsubishi-2207971.jpg">
+                  <span class="mask"></span>
+                </div>
+              </div>
+              <div class="product-item__body">
+                <div class="product-item__name">
+                  Ambulance Mitsubishi strada TRITON
+                </div>
+                <div class="product-item__price">
+                  Rp. 615.000.000
+                </div>
+              </div>
+            </a>
+            <div class="favourite-badge icon_fav1" data-ad-id="1778549787" onclick="add_to_wishlist(this)"></div>
+          </div>
+
+          <div class="product-item">
+            <a href="https://www.jualo.com/mobil-toyota/iklan-mobil-ambulance-toyota-hi-ace-baru">
+              <div class="product-item__head">
+                <div class="product-item__badge">
+                </div>
+                <div class="product-item__image">
+                  <img alt="" backup_img="product"
+                    src="https://storage.jualo.com/big_thumb/2254991/menjual-mobil-ambulan-mobil-toyota-2254991.jpg">
+                  <span class="mask"></span>
+                </div>
+              </div>
+              <div class="product-item__body">
+                <div class="product-item__name">
+                  Mobil Ambulance Toyota Hi-Ace Baru
+                </div>
+                <div class="product-item__price">
+                  Rp. 1.100.000.000
+                </div>
+              </div>
+            </a>
+            <div class="favourite-badge icon_fav1" data-ad-id="1778565806" onclick="add_to_wishlist(this)"></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="row category-row">
+      <div class="col-12 category-listing__ads_title">
+        <div class="pull-left">
+          <span class="product-heading-text">Iklan Jual Beli Properti</span>
+        </div>
+        <div class="pull-right">
+          <div class="button-action text-center">
+            <%= link_to "See all", "/properti", class: "button button--small button--green" %>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="category-listing__ads">
+          <div class="product-item">
+            <a href="https://www.jualo.com/tanah-dijual/iklan-tanah-kavling-syariah-di-bekasi-maryam-residence">
+              <div class="product-item__head">
+                <div class="product-item__badge">
+                  <div class="premium-badge icon_premium"></div>
+                </div>
+                <div class="product-item__image">
+                  <img alt="" backup_img="product"
+                    src="https://storage.jualo.com/big_thumb/19992303/tanah-kavling-syariah-tanah-dijual-19992303.jpg">
+                  <span class="mask"></span>
+                </div>
+              </div>
+              <div class="product-item__body">
+                <div class="product-item__name">
+                  Tanah Kavling Syariah Di Bekasi Maryam Residence
+                </div>
+                <div class="product-item__price">
+                  Rp. 174.900.000
+                </div>
+              </div>
+            </a>
+            <div class="favourite-badge icon_fav1" data-ad-id="1783794803" onclick="add_to_wishlist(this)"></div>
+          </div>
+
+          <div class="product-item">
+            <a
+              href="https://www.jualo.com/kios-dijual/iklan-kios-murah-good-condition-di-apartemen-kalibata-city-tower-borneo">
+              <div class="product-item__head">
+                <div class="product-item__badge">
+                  <div class="premium-badge icon_premium"></div>
+                </div>
+                <div class="product-item__image">
+                  <img alt="" backup_img="product"
+                    src="https://storage.jualo.com/big_thumb/12598323/kios-good-condition-kios-dijual-12598323.jpg">
+                  <span class="mask"></span>
+                </div>
+              </div>
+              <div class="product-item__body">
+                <div class="product-item__name">
+                  Kios Murah (Good Condition) Di Apartemen Kalibata City Tower Borneo
+                </div>
+                <div class="product-item__price">
+                  Rp. 380.000.000
+                </div>
+              </div>
+            </a>
+            <div class="favourite-badge icon_fav1" data-ad-id="1781646737" onclick="add_to_wishlist(this)"></div>
+          </div>
+
+          <div class="product-item">
+            <a href="https://www.jualo.com/rumah-dijual/iklan-rumah-kontrakan-16-pintu-di-pondok-alam-indah-bekasi">
+              <div class="product-item__head">
+                <div class="product-item__badge">
+                  <div class="premium-badge icon_premium"></div>
+                </div>
+                <div class="product-item__image">
+                  <img alt="" backup_img="product"
+                    src="https://storage.jualo.com/big_thumb/19930883/rumah-kontrakan-16-pi-rumah-dijual-19930883.jpg">
+                  <span class="mask"></span>
+                </div>
+              </div>
+              <div class="product-item__body">
+                <div class="product-item__name">
+                  Rumah Kontrakan 16 Pintu Di Pondok Alam Indah Bekasi
+                </div>
+                <div class="product-item__price">
+                  Rp. 1.750.000.000
+                </div>
+              </div>
+            </a>
+            <div class="favourite-badge icon_fav1" data-ad-id="1783775059" onclick="add_to_wishlist(this)"></div>
+          </div>
+
+          <div class="product-item">
+            <a href="https://www.jualo.com/rumah-dijual/iklan-rumah-di-kebayoran-lama-tp">
+              <div class="product-item__head">
+                <div class="product-item__badge">
+                  <div class="premium-badge icon_premium"></div>
+                </div>
+                <div class="product-item__image">
+                  <img alt="" backup_img="product"
+                    src="https://storage.jualo.com/big_thumb/12746089/rumah-di-kebayoran-la-alat-musik-lainnya-12746089.jpg">
+                  <span class="mask"></span>
+                </div>
+              </div>
+              <div class="product-item__body">
+                <div class="product-item__name">
+                  Rumah Di Kebayoran Lama - TP
+                </div>
+                <div class="product-item__price">
+                  Rp. 6.000.000.000
+                </div>
+              </div>
+            </a>
+            <div class="favourite-badge icon_fav1" data-ad-id="1781688565" onclick="add_to_wishlist(this)"></div>
+          </div>
+
+          <div class="product-item">
+            <a
+              href="https://www.jualo.com/rumah-dijual/iklan-rumah-idaman-mewah-murah-berkualitas-dekat-ke-tangsel-depok-bogot">
+              <div class="product-item__head">
+                <div class="product-item__badge">
+                  <div class="premium-badge icon_premium"></div>
+                </div>
+                <div class="product-item__image">
+                  <img alt="" backup_img="product"
+                    src="https://storage.jualo.com/big_thumb/19231575/rumah-idaman-mewah-mu-rumah-dijual-19231575.jpg">
+                  <span class="mask"></span>
+                </div>
+              </div>
+              <div class="product-item__body">
+                <div class="product-item__name">
+                  Rumah Idaman Mewah Murah Berkualitas Dekat Ke Tangsel Depok Bogot
+                </div>
+                <div class="product-item__price">
+                  Rp. 338.000.000
+                </div>
+              </div>
+            </a>
+            <div class="favourite-badge icon_fav1" data-ad-id="1783550603" onclick="add_to_wishlist(this)"></div>
+          </div>
+
+          <div class="product-item">
+            <a
+              href="https://www.jualo.com/apartemen-dijual/iklan-apartemen-murah-cocok-untuk-mahasiswa-ipb-di-dramaga-tower-di-bogor">
+              <div class="product-item__head">
+                <div class="product-item__badge">
+                  <div class="premium-badge icon_premium"></div>
+                </div>
+                <div class="product-item__image">
+                  <img alt="" backup_img="product"
+                    src="https://storage.jualo.com/big_thumb/17577911/apartemen-murah-di-dr-apartemen-dijual-17577911.jpg">
+                  <span class="mask"></span>
+                </div>
+              </div>
+              <div class="product-item__body">
+                <div class="product-item__name">
+                  Apartemen Murah Cocok Untuk Mahasiswa IPB Di Dramaga Tower Di Bogor
+                </div>
+                <div class="product-item__price">
+                  Rp. 290.000.000
+                </div>
+              </div>
+            </a>
+            <div class="favourite-badge icon_fav1" data-ad-id="1783049227" onclick="add_to_wishlist(this)"></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
