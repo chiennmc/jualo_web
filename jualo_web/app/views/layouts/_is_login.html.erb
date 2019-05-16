@@ -1,0 +1,49 @@
+<div class="account-dropdown-login__user">
+  <a href="/profile">
+    <%= content_tag(:span, class: "user-photo") do %>
+    <%= image_tag("https://www.jualo.com/assets/noavatar-8c11c7c8dd0aaccd941b0ca4d86be3f5d08075272faa0c2c6b0ec2bd06943830.png", 
+      alt: "Noavatar", backup_img: "avatar") 
+    %>
+    <% end %>
+    <%= content_tag(:span, current_user.username) %>
+    <br>
+    <span class="user-location">
+
+    </span>
+  </a>
+</div>
+<div class="account-dropdown-login__list">
+  <%= link_to "#" do %>
+  <div>My Ad</div>
+  <% end %>
+  <%= link_to "#" do %>
+  <div>Ad Rejected</div>
+  <% end %>
+  <%= link_to "#" do %>
+  <div>Favorite</div>
+  <% end %>
+</div>
+<div class="account-dropdown-login__list">
+  <%= link_to "#" do %>
+  <div>Message</div>
+  <% end %>
+  <%= link_to "#" do %>
+  <div>Notification</div>
+  <% end %>
+  <%= link_to "#" do %>
+  <div>Feedback</div>
+  <% end %>
+</div>
+<div class="account-dropdown-login__list">
+  <%= link_to "#" do %>
+  <div>Furse</div>
+  <% end %>
+</div>
+<div class="account-dropdown-login__list">
+  <%= link_to "#" do %>
+  <div>Edit Account</div>
+  <% end %>
+  <%= link_to signout_path, method: :delete, class: "btn-no-alert" do %>
+  <div>Logout</div>
+  <% end %>
+</div>

@@ -2,42 +2,20 @@
   <div class="container">
     <div class="row">
       <div class="col-6">
-        <div class="brand-listing">
-          <div class="brand-listing-head">
-            <div class="pull-left">
-              Motor Official Brand
-            </div>
-            <div class="pull-right">
-              <a class="button button--block" href="/motor/baru-dan-bekas">See all</a>
-            </div>
-          </div>
-          <div class="brand-listing-body">
-          <% @brands_motor.each do |brand| %>
-            <div class="brand-list-item">
-              <%= image_tag brand.image %>
-            </div>
-          <% end %>
-          </div>
-        </div>
+        <%= render partial: "list_brand", 
+          locals: { 
+            title_brand: "Motor Official Brand",
+            brands: @brands_motor
+          } 
+        %>
       </div>
       <div class="col-6" style="padding-left: 0px !important;">
-        <div class="brand-listing">
-          <div class="brand-listing-head">
-            <div class="pull-left">
-              Car Official Brand
-            </div>
-            <div class="pull-right">
-              <a class="button button--block" href="/mobil/bekas-dan-baru">See all</a>
-            </div>
-          </div>
-          <div class="brand-listing-body">
-            <% @brands_car.each do |brand| %>
-              <div class="brand-list-item">
-                <%= image_tag brand.image %>
-              </div>
-            <% end %>
-          </div>
-        </div>
+        <%= render partial: "list_brand", 
+          locals: { 
+            title_brand: "Car Official Brand",
+            brands: @brands_car
+          } 
+        %>
       </div>
     </div>
   </div>

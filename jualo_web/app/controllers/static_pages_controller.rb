@@ -7,7 +7,17 @@ class StaticPagesController < ApplicationController
     @category_motor   = Category.find(2)
     @brands_motor     = @category_motor.brands.limit(5)
 
-    # @product_motors = @category_motor.products.limit(6)
-    @product_motors = Product.joins(:pro_details, :category).where(category_id: 2).limit(6)
+    # 1 is id of category car
+    # 2 is id of category motor
+    @product_motors = get_product(2)
+    @product_cars   = get_product(1)
   end
+
+
+  def get_product(id)
+    Product.joins(:pro_details, :category)
+            .select("pro_details.id", "products.name", "pro_details.price")
+            .where(category_id: id).limit(6)
+  end
+  
 end

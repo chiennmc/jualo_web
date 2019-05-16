@@ -1,0 +1,31 @@
+<div class="account-dropdown__welcome">Welcome to Selling!</div>
+<div class="account-dropdown__login">
+  <%= link_to  "LOGIN", signin_path, 
+    { class: "button button--green", ref: "nofollow", 
+    "data-toggle": "modal", "data-target": "#loginModal" } 
+  %>
+</div>
+<div class="account-dropdown__login-with">or login with</div>
+<div class="account-dropdown__social-media row">
+  <div class="col-6 facebook">
+    <a class="fbpopup button button--facebook" data-height="400" data-width="600" href="/users/auth/facebook"
+      id="fbpopup1" onclick="return open_authorization_windows(this);" rel="nofollow" rp="https://www.jualo.com/"
+      target="_blank">
+      facebook
+    </a>
+  </div>
+  <div class="col-6 google">
+    <a class="fbpopup button button--google" data-height="500" data-width="600" href="/users/auth/google" id="fbpopup1"
+      onclick="return open_authorization_windows(this);" rel="nofollow" rp="https://www.jualo.com/" target="_blank">
+      google+
+    </a>
+  </div>
+</div>
+<div class="account-dropdown__line"></div>
+<div class="account-dropdown__not-have">Do not have an account?</div>
+<div class="account-dropdown__sign-in">
+  <%= link_to  "REGISTER", signup_path, 
+    { class: "button button--orange", ref: "nofollow", 
+    "data-toggle": "modal", "data-target": "#signupModal" } 
+  %>
+</div>

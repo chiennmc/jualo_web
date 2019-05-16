@@ -4,38 +4,14 @@
       <div class="col-3">
         <div class="category" id="categoryMenu">
           <div class="category__title">
-            <span>Category</span>
+            <%= content_tag(:span, "Category") %>
           </div>
           <ul class="category__container">
             <%= render "category" %>
           </ul>
         </div>
       </div>
-      <div class="col-6 pad-0">
-        <a href="/motor"><img class="home-banner home-top-banners main-banner"
-            src="https://www.jualo.com/assets/milan_version/banners/banner-motor-v2-ad7bb763f89838de86a891a152d58e211b8d0f275ee503bfd090b69dd4b1247c.jpg"
-            alt="Banner motor v2"></a>
-      </div>
-      <div class="col-3 pad-0">
-        <a href="/mobil"><img class="home-banner home-top-banners"
-            src="https://www.jualo.com/assets/milan_version/banners/banner-mobil-688571761bb48c817abe6c5e2d40d88931b78cb474814f53c5cd2ca3a86c8cf5.jpg"
-            alt="Banner mobil"></a>
-      </div>
-      <div class="col-3 pad-0">
-        <a href="/properti/rumah"><img class="home-banner"
-            src="https://www.jualo.com/assets/milan_version/banners/properti-1-9dc794df172c383af1e78cc596c71629b654746716f93b577504ef7f8ab67c1c.jpg"
-            alt="Properti 1"></a>
-      </div>
-      <div class="col-3 pad-0">
-        <a href="/properti/apartemen"><img class="home-banner"
-            src="https://www.jualo.com/assets/milan_version/banners/properti-2-df52ea202aec7f7b66eade607b2e5fb0cb601c41cb3c0e690e8de45f1a455605.jpg"
-            alt="Properti 2"></a>
-      </div>
-      <div class="col-3 pad-0">
-        <a href="/properti/tanah"><img class="home-banner"
-            src="https://www.jualo.com/assets/milan_version/banners/properti-3-0ce1ecb679ded7a04a5e94871c62d8659d9b519eb6a60403d16c99f486e554ca.jpg"
-            alt="Properti 3"></a>
-      </div>
+      <%= render "banner" %>
     </div>
   </div>
 </section>
