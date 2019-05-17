@@ -13,7 +13,7 @@
     <div class="category-listing__ads">
       <% products.each do |product| %>
       <div class="product-item">
-        <%= link_to  "#" do %>
+        <%= link_to product do %>
         <div class="product-item__head">
           <div class="product-item__badge">
           </div>
@@ -31,7 +31,7 @@
             <%= link_to  product.name %>
           </div>
           <div class="product-item__price">
-            <%= link_to  product.price %> VND
+            Rp <%= link_to  product.price %>
           </div>
         </div>
         <% end %>

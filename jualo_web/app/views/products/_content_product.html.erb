@@ -1,0 +1,246 @@
+<div class="product-detail__section">
+
+  <div class="jbanner" id="jbanner0"></div>
+
+  <div class="col-7 pad-0">
+    <div class="product-detail__desc">
+      <div class="product-image">
+        <div class="product-image__container">
+          <% if !product.pro_images.find_by(is_card: true).nil? %>
+          <%= image_tag(product.pro_images.find_by(is_card: true).image, id: "id_main_image") %>
+          <% else %>
+          <%= image_tag(product.pro_images.first.image, id: "id_main_image") %>
+          <% end %>
+        </div>
+        <div class="product-image__fullscreen hide">
+          <% content_tag(:span, class: "icon icon_expand") %>
+        </div>
+        <div class="product-image__prev"
+          onclick="return change_ad_image(-1); ga('send', 'event', 'Ad Image', 'prev', 'Yamaha Xmax Tahun 2017 - 1783787079');">
+          <span class="icon icon_angle-pointing-to-left"></span>
+        </div>
+        <div class="product-image__next"
+          onclick="return change_ad_image(1); ga('send', 'event', 'Ad Image', 'next', 'Yamaha Xmax Tahun 2017 - 1783787079');">
+          <span class="icon icon_angle-arrow-pointing-to-right"></span>
+        </div>
+      </div>
+      <div class="product-thumbnail">
+        <div class="product-thumbnail__wrapper">
+          <%= render partial: "list_product_image", locals: { product_images: product_images } %>
+        </div>
+      </div>
+
+      <%= render partial: "spec_product", locals: { product: product } %>
+
+      <div class="product-detail__action text-center">
+        <div class="action-list"
+          onclick="ga('send', 'event', 'Ad/Product', 'goto report abuse', 'Yamaha Xmax Tahun 2017 - 1783787079'); loadFormFunctionBaru('abuse-form');">
+          <div class="action-list-text report-this-ad">
+            Report Advertisements
+          </div>
+          <div class="action-list-button">
+            <span class="icon icon_close-white"></span>
+          </div>
+        </div>
+        <div class="action-popup">
+          <div class="action-popup-title">Laporkan Iklan</div>
+          <form action="/abuse_reports" class="modal_ad_form" id="new_abuse_report" method="post" name="abuse-form"
+            target="_parent">
+            <input type="hidden" name="abuse_report[ad_id]" id="abuse_report_ad_id" value="1783787079">
+            <input type="hidden" name="abuse_report[redirect]" id="abuse_report_redirect">
+            <input type="hidden" name="abuse_report[ip]" id="abuse_report_ip" value="10.76.129.84">
+            <input type="hidden" name="abuse_report[name]" id="abuse_report_name" value="Chiến Ngô">
+            <input type="hidden" name="abuse_report[email]" id="abuse_report_email" value="minhchien96bn@gmail.com">
+            <label>
+              <input type="radio" name="abuse_report[message]" id="abuse_report_message_Iklan_memiliki_banyak_duplikat"
+                value="Iklan memiliki banyak duplikat" class="milan-radio" checked="checked">
+              <span></span>
+              Iklan memiliki banyak duplikat
+            </label>
+            <label>
+              <input type="radio" name="abuse_report[message]"
+                id="abuse_report_message_Konten_mengandung_hal_yang_tidak_wajar"
+                value="Konten mengandung hal yang tidak wajar" class="milan-radio" checked="checked">
+              <span></span>
+              Konten mengandung hal yang tidak wajar
+            </label>
+            <label>
+              <input type="radio" name="abuse_report[message]" id="abuse_report_message_Produk_Ilegal_dan_Berbahaya"
+                value="Produk Ilegal dan Berbahaya" class="milan-radio" checked="checked">
+              <span></span>
+              Produk Ilegal dan Berbahaya
+            </label>
+            <label>
+              <input type="radio" name="abuse_report[message]" id="abuse_report_message_Harga_tidak_wajar"
+                value="Harga tidak wajar" class="milan-radio" checked="checked">
+              <span></span>
+              Harga tidak wajar
+            </label>
+            <label>
+              <input type="radio" name="abuse_report[message]" id="abuse_report_message_Pelanggaran_merk_dagang"
+                value="Pelanggaran merk dagang" class="milan-radio" checked="checked">
+              <span></span>
+              Pelanggaran merk dagang
+            </label>
+            <div class="action-popup-button">
+              <input type="submit" name="commit" value="Lapor" class="button button--green button--rounded">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-5 pad-0">
+
+      <%= render partial: "content_product_detail", locals: { product: product } %>
+      <%= render partial: "content_product_user", locals: { product: product } %>
+
+      <div class="product-detail__transaction tips-for-buyers">
+        <div class="row">
+          <div class="col-12 text-center">
+            <img
+              src="https://www.jualo.com/assets/ic_tips-7b6315f280eed6383824ab9d17177d306a205f3bef40bfe63707cb3a2913600f.svg"
+              alt="Ic tips">
+            <font style="vertical-align: inherit;">
+              <font style="vertical-align: inherit;">
+                Tips for Buying Products from Sellers
+              </font>
+            </font>
+          </div>
+          <div class="col-12 tips-details">
+            <div class="tips-image">
+              <img
+                src="https://www.jualo.com/assets/buuy-safety-illustration-332b4bd3731d0c4275b4330df2ddb4e4237cb9501fc59004c09540baff790cd3.svg"
+                alt="Buuy safety illustration">
+            </div>
+            <div class="seller-tips-content">
+              <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">
+                  Make sure you have checked the seller's profile and availability of goods before making a
+                  transaction or any type of payment transfer directly to an account outside Jualo.com.
+                </font>
+              </font>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="product-detail__listing_product">
+        <div class="product-detail__items">
+          <div class="title">
+            <font style="vertical-align: inherit;">
+              <font style="vertical-align: inherit;">
+                Other seller's products
+              </font>
+            </font>
+          </div>
+          <div class="item-listing-container iklan_penjual_container">
+            <div class="item-wrapper">
+              <div class="item">
+                <a href="https://www.jualo.com/motor-honda/iklan-honda-cbr-150r-2018">
+                  <div class="product-item__head">
+                    <div class="product-item__image"><img alt="" backup_img="Honda Cbr 150R 2018"
+                        src="https://storage.jualo.com/big_thumb/17093815/honda-cbr-150r-2018-motor-honda-17093815.jpg"
+                        width="149" height="149"><span class="mask"></span></div>
+                  </div>
+                  <div class="product-item__body">
+                    <div class="product-item__name product-item__name--small">
+                      <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">
+                          Honda Cbr 150R 2018 
+                        </font>
+                      </font>
+                    </div>
+                    <div class="product-item__price product-item__price--small">
+                      <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">Rp. </font>
+                        <font style="vertical-align: inherit;">27,000,000</font>
+                      </font>
+                    </div>
+                  </div>
+                  <div class="product-item__option">
+                    <div class="product-item__info">
+                      <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">
+                          Former
+                        </font>
+                      </font>
+                    </div>
+                    <div class="product-item__info">
+                      <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">Negotiable</font>
+                      </font>
+                    </div>
+                  </div>
+                  <div class="product-item-listing_footer">
+                    <div class="product-item__location">
+                      <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">City of Bandung, West Java</font>
+                      </font>
+                    </div>
+                  </div>
+                </a>
+                <div class="iklan_penjual">
+                  <span class="favourite-badge show">
+                    <i class="fa fa-heart-o" data-ad-id="1782910895" onclick="add_to_wishlist_from_ad_page(this)"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+          <script>dataLayer = [{ "pageGroup": "other", "persistentSessionId": null, "snowplowEndpoint": "snow.jualo.com", "gtmEnv": "snow.jualo.com", "statsApiAuth": "xQiaEMY6Ag95Drdrdc4Cr5jfppchbRUN6QmTmOlo", "statsApiEndpoint": "https://066tku605c.execute-api.ap-southeast-1.amazonaws.com/prod/statistics", "userId": 4950603, "userNrOfLiveProducts": 0, "userRating": 0, "userLocationCountry": "Indonesia", "userLocationState": "", "userLocationCity": "", "userLocationDistrict": "", "productAdId": 1783787079, "productUrl": "https://www.jualo.com/motor-yamaha/iklan-yamaha-xmax-tahun-2017", "productPrice": 48000000, "productStock": 999999000, "productOwnerUserId": 3667779, "productAvailableSince": "2019-05-11T14:46:02.000+07:00", "productTitle": "Yamaha Xmax Tahun 2017", "productCategoryId": 435, "productSellingPrice": 48000000, "wasSold": false, "productIsPremium": true, "productType": "Bekas", "productLocationCountry": "Indonesia", "productLocationState": "Jawa Barat", "productLocationCity": "Kota Bandung", "productLocationDistrict": "", "productCategory": "Motor", "productSubcategory": "Motor Baru \u0026 Bekas", "productSubsubcategory": "Yamaha", "locationAccessIsGranted": false, "pageHasImpressions": true, "impressions": [{ "ad_id": 1782910895, "seller_user_id": 3667779, "search_query": null, "listing_type": "similiar product", "country": "Indonesia", "state": "Jawa Barat", "city": "Kota Bandung", "is_premium": false, "page_number": 1, "total_pages": 1, "rank_on_page": 1, "results_per_page": 2, "platform": "web", "user_id": 4950603, "user_country": "Indonesia", "user_state": null, "user_city": null, "category": "Motor", "subcategory": "Motor Baru \u0026 Bekas", "subsubcategory": "Honda" }, { "ad_id": 1783787079, "seller_user_id": 3667779, "search_query": null, "listing_type": "similiar product", "country": "Indonesia", "state": "Jawa Barat", "city": "Kota Bandung", "is_premium": true, "page_number": 1, "total_pages": 1, "rank_on_page": 2, "results_per_page": 2, "platform": "web", "user_id": 4950603, "user_country": "Indonesia", "user_state": null, "user_city": null, "category": "Motor", "subcategory": "Motor Baru \u0026 Bekas", "subsubcategory": "Yamaha" }] }]</script>
+
+          <script>(function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl + '&gtm_auth=ZcTS7o-bxyEtKkI8-cFgSQ&gtm_preview=env-2&gtm_cookies_win=x'; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-M9PT9SL');</script>
+
+
+
+
+
+        </div>
+      </div>
+      <div class="product-detail__adsense-medium">
+        <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- Native Banner Adsense Desktop -->
+        <ins class="adsbygoogle" data-ad-client="ca-pub-1720575921318265" data-ad-slot="8353003794"
+          style="display: inline-block; width: 300px; height: 0px;" data-adsbygoogle-status="done"><ins
+            id="aswift_0_expand"
+            style="display: inline-table; border: none; height: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 300px; background-color: transparent;"><ins
+              id="aswift_0_anchor"
+              style="display: block; border: none; height: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 300px; background-color: transparent; overflow: hidden; opacity: 0;"><iframe
+                width="300" height="250" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0"
+                allowtransparency="true" scrolling="no" allowfullscreen="true" id="aswift_0" name="aswift_0"
+                style="left:0;position:absolute;top:0;border:0px;width:300px;height:250px;"></iframe></ins></ins></ins>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+
+      </div>
+    </div>
+  </div>
+  <div class="col-12 product-detail__banner">
+    <div class="jbanner" id="jbanner1"></div>
+  </div>
+
+  <%= render  "list_product_ads" %>
+  <script>dataLayer = [{ "pageGroup": "other", "persistentSessionId": null, "snowplowEndpoint": "snow.jualo.com", "gtmEnv": "snow.jualo.com", "statsApiAuth": "xQiaEMY6Ag95Drdrdc4Cr5jfppchbRUN6QmTmOlo", "statsApiEndpoint": "https://066tku605c.execute-api.ap-southeast-1.amazonaws.com/prod/statistics", "userId": 4950603, "userNrOfLiveProducts": 0, "userRating": 0, "userLocationCountry": "Indonesia", "userLocationState": "", "userLocationCity": "", "userLocationDistrict": "", "productAdId": 1783787079, "productUrl": "https://www.jualo.com/motor-yamaha/iklan-yamaha-xmax-tahun-2017", "productPrice": 48000000, "productStock": 999999000, "productOwnerUserId": 3667779, "productAvailableSince": "2019-05-11T14:46:02.000+07:00", "productTitle": "Yamaha Xmax Tahun 2017", "productCategoryId": 435, "productSellingPrice": 48000000, "wasSold": false, "productIsPremium": true, "productType": "Bekas", "productLocationCountry": "Indonesia", "productLocationState": "Jawa Barat", "productLocationCity": "Kota Bandung", "productLocationDistrict": "", "productCategory": "Motor", "productSubcategory": "Motor Baru \u0026 Bekas", "productSubsubcategory": "Yamaha", "locationAccessIsGranted": false, "pageHasImpressions": true, "impressions": [{ "ad_id": 1782928575, "seller_user_id": 3688835, "search_query": null, "listing_type": "similiar product", "country": "Indonesia", "state": "Jawa Barat", "city": "Kota Bandung", "is_premium": false, "page_number": 1, "total_pages": 1, "rank_on_page": 1, "results_per_page": 6, "platform": "web", "user_id": 4950603, "user_country": "Indonesia", "user_state": null, "user_city": null, "category": "Motor", "subcategory": "Motor Baru \u0026 Bekas", "subsubcategory": "Yamaha" }, { "ad_id": 1783096747, "seller_user_id": 2675679, "search_query": null, "listing_type": "similiar product", "country": "Indonesia", "state": "Jawa Barat", "city": "Kota Bogor", "is_premium": false, "page_number": 1, "total_pages": 1, "rank_on_page": 2, "results_per_page": 6, "platform": "web", "user_id": 4950603, "user_country": "Indonesia", "user_state": null, "user_city": null, "category": "Properti", "subcategory": "Rumah", "subsubcategory": "Dijual" }, { "ad_id": 1783260263, "seller_user_id": 4708135, "search_query": null, "listing_type": "similiar product", "country": "Indonesia", "state": "Bali", "city": "Kota Denpasar", "is_premium": false, "page_number": 1, "total_pages": 1, "rank_on_page": 3, "results_per_page": 6, "platform": "web", "user_id": 4950603, "user_country": "Indonesia", "user_state": null, "user_city": null, "category": "Motor", "subcategory": "Motor Baru \u0026 Bekas", "subsubcategory": "Yamaha" }, { "ad_id": 1783299235, "seller_user_id": 4746319, "search_query": null, "listing_type": "similiar product", "country": "Indonesia", "state": "DKI Jakarta", "city": "Kota Jakarta Selatan", "is_premium": false, "page_number": 1, "total_pages": 1, "rank_on_page": 4, "results_per_page": 6, "platform": "web", "user_id": 4950603, "user_country": "Indonesia", "user_state": null, "user_city": null, "category": "Motor", "subcategory": "Motor Baru \u0026 Bekas", "subsubcategory": "Yamaha" }, { "ad_id": 1783684415, "seller_user_id": 748357, "search_query": null, "listing_type": "similiar product", "country": "Indonesia", "state": "Jawa Barat", "city": "Kota Bandung", "is_premium": false, "page_number": 1, "total_pages": 1, "rank_on_page": 5, "results_per_page": 6, "platform": "web", "user_id": 4950603, "user_country": "Indonesia", "user_state": null, "user_city": null, "category": "Motor", "subcategory": "Motor Baru \u0026 Bekas", "subsubcategory": "Yamaha" }, { "ad_id": 1783702555, "seller_user_id": 4693659, "search_query": null, "listing_type": "similiar product", "country": "Indonesia", "state": "Jawa Barat", "city": "Kab. Bogor", "is_premium": false, "page_number": 1, "total_pages": 1, "rank_on_page": 6, "results_per_page": 6, "platform": "web", "user_id": 4950603, "user_country": "Indonesia", "user_state": null, "user_city": null, "category": "Motor", "subcategory": "Motor Baru \u0026 Bekas", "subsubcategory": "Yamaha" }] }]</script>
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl + '&gtm_auth=ZcTS7o-bxyEtKkI8-cFgSQ&gtm_preview=env-2&gtm_cookies_win=x'; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-M9PT9SL');</script>
+  <!-- End Google Tag Manager -->
+
+
+  <div class="col-12 product-detail__adsense" style="margin: 0px; padding: 0px; border-width: 0px;">
+    <script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Native Banner Adsense Desktop -->
+    <ins class="adsbygoogle" data-ad-client="ca-pub-1720575921318265" data-ad-slot="9941417634"
+      style="display: inline-block; width: 0px; height: 0px;" data-adsbygoogle-status="done"><ins id="aswift_1_expand"
+        style="display: inline-table; border: none; height: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 0px; background-color: transparent;"><ins
+          id="aswift_1_anchor"
+          style="display: block; border: none; height: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; width: 0px; background-color: transparent; overflow: hidden; opacity: 0;"><iframe
+            width="728" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0"
+            allowtransparency="true" scrolling="no" allowfullscreen="true" id="aswift_1" name="aswift_1"
+            style="left:0;position:absolute;top:0;border:0px;width:728px;height:90px;"></iframe></ins></ins></ins>
+    <script>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+
+  </div>
+</div>

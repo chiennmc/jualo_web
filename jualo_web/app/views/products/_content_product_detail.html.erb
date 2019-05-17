@@ -1,0 +1,154 @@
+<div class="product-detail__transaction product-detail-box">
+  <div class="row">
+    <div class="col-8">
+      <h1 class="product-name">
+        <%= product.product.name %>
+      </h1>
+      <div class="product-price">
+        <%= content_tag(:span, class: "product-price-value") do %>
+        Rp <%= number_with_delimiter(product.price, delimiter: ".") %>
+        <% end %>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="fav-ad-btn">
+        <i class="fa fa-heart-o" data-ad-id="1783787079" data-ad-name="Yamaha Xmax Tahun 2017"
+          onclick="add_to_wishlist_from_ad_page(this)"></i>
+      </div>
+      <div class="share-ad-btn" id="share-ad-btn">
+        <img
+          src="https://www.jualo.com/assets/share-orange-7a393cfcfd11441dbe1b567568af463693f44328f5ac57a44f258a846bf180a2.svg"
+          alt="Share orange">
+      </div>
+      <div class="hide shareWrapper" id="shareBlock">
+        <i class="arrow-up">
+          <img
+            src="https://www.jualo.com/assets/icons/up-arrow-f937b5c9bfe8a79ed1ce4ccaa82b7fdec30baa5470a58c5aadeba17c26889e0c.svg"
+            alt="Up arrow">
+        </i>
+        <div class="col-12 share-container-title">
+          BAGIKAN IKLAN INI
+        </div>
+        <div class="col-12 shareContainer">
+          <a class="copy-link js-copy-link-share">
+            <img
+              src="https://www.jualo.com/assets/share-link-9add885c2c62358e8fe61d6912971a8afd048c91f575d13df6310a981e5e7ddc.svg"
+              alt="Share link">
+            <div class="copied hide">Copied!</div>
+          </a>
+          <a class="whatsapp"
+            href="https://web.whatsapp.com/send?text=Hi%2C%20sepertinya%20kamu%20akan%20suka%20iklan%20ini%21%20Cek%20link%20berikut%3A%20https%3A%2F%2Fwww.jualo.com%2Fiklan%2Fyamaha-xmax-tahun-2017.3667779"
+            rel="nofollow" target="_blank">
+            <img
+              src="https://www.jualo.com/assets/share-whatsapp-bab1aaf328fbdedac02b02e07a577a8355ae541ad7a3ca0eec507ac57b00594b.svg"
+              alt="Share whatsapp">
+          </a>
+          <a class="line"
+            href="https://social-plugins.line.me/lineit/share?text=Hi%2C%20sepertinya%20kamu%20akan%20suka%20iklan%20ini%21%20Cek%20link%20berikut%3A&amp;url=https%3A%2F%2Fwww.jualo.com%2Fiklan%2Fyamaha-xmax-tahun-2017.3667779"
+            rel="nofollow" target="_blank">
+            <img
+              src="https://www.jualo.com/assets/share-line-9a57fbf3e5e7de7473babca84a7da208785a0590ce13336194c86453bb0116be.svg"
+              alt="Share line">
+          </a>
+          <a class="facebook js-facebook-share"
+            data-ad-description="Dijual%20yamaha%20xmax%20th%202017%20warna%20hitam%20abu%2C%20kondisi%20mulus%20KM%2010rb%2C%20plat%20nomor%20kota%20cimahi.%20Ban%20pirelli%20angel%20scooter%2C%20selang%20rem%20depan%20belakang%20pake%20h.Sudah%20coba%20jual%20barang%20Anda%20di%20Jualo.com%20seperti%20%25%7Bname%7D%3F%20Cepat%20dan%20gratis%20loh%21"
+            data-ad-name="Yamaha%20Xmax%20Tahun%202017"
+            data-ad-thumb="https://storage.jualo.com/thumb/19967147/yamaha-xmax-tahun-201-motor-yamaha-19967147.jpg"
+            data-ad-url="https://www.jualo.com/iklan/yamaha-xmax-tahun-2017.3667779">
+            <img
+              src="https://www.jualo.com/assets/share-facebook-cda7457285803474c439a248c951723ba33c803d9e5ba34dcbf7badaef124b1c.svg"
+              alt="Share facebook">
+          </a>
+          <a class="twitter js-twitter-share"
+            href="https://twitter.com/share?url=https://www.jualo.com/iklan/yamaha-xmax-tahun-2017.3667779&amp;text=Tertarik dengan &quot;Yamaha Xmax Tahun 2017&quot;? Kunjungi /motor-yamaha/iklan-yamaha-xmax-tahun-2017."
+            rel="nofollow" target="_blank">
+            <img
+              src="https://www.jualo.com/assets/share-twitter-2718133234096b304951f272f77559f5d9629c704231f2dee44d069420c4f548.svg"
+              alt="Share twitter">
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="product-location">
+        <%= image_tag("marker.png")%>
+        Kota Bandung, Jawa Barat
+      </div>
+    </div>
+  </div>
+  <div class="row product-info-section">
+    <div class="col-4 text-center product-info-divider">
+      <div class="product-info-key">
+        <p style="vertical-align: inherit;">
+          <p style="vertical-align: inherit;">Status</p>
+        </p>
+      </div>
+      <div class="product-info-value">
+        <p style="vertical-align: inherit;">
+          <%= content_tag(:p, product.product.status ,style: "vertical-align: inherit;") %>
+        </p>
+      </div>
+    </div>
+    <div class="col-4 text-center product-info-divider">
+      <div class="product-info-key">
+        <p style="vertical-align: inherit;">
+          <p style="vertical-align: inherit;">Updated</p>
+        </p>
+      </div>
+      <div class="product-info-value">
+        <span>
+          <p style="vertical-align: inherit;">
+            <p style="vertical-align: inherit;">
+              <%= time_ago_in_words(product.updated_at) %>
+            </p>
+          </p>
+        </span>
+      </div>
+    </div>
+    <div class="col-4 text-center">
+      <div class="product-info-key">
+        <p style="vertical-align: inherit;">
+          <p style="vertical-align: inherit;">Seen</p>
+        </p>
+      </div>
+      <div class="product-info-value">
+        <p style="vertical-align: inherit;">
+          <p style="vertical-align: inherit;">178 times</p>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="row product-buttons">
+    <div class="col-6">
+      <div class="row">
+        <a class="col-6 contact-seller-whatsapp inactive text-center" href="javascript:void(0)" rel="nofollow"
+          target="_self">
+          <img
+            src="https://www.jualo.com/assets/ic_whatsapp_inactive-9ab95638b429fbcf05a6111888ef238546375231ac5e71d3041e4d8798ef05d1.svg"
+            alt="Ic whatsapp inactive">
+          WHATSAPP
+        </a>
+        <a class="col-6 text-center contact-seller-mb" id="seller-mb">
+          <img style="padding: 10px 0px 7px 5px;"
+            src="https://www.jualo.com/assets/ic_call-24b2e2467112fd83a82ecde642388df52fa217cb179391f897e7c209641ad223.svg"
+            alt="Ic call">
+          CALL/SMS
+        </a>
+        <div class="seller-contact-popup hide" id="mb-number-popup">
+          <div class="title">
+            CALL / SMS
+            PENJUAL
+          </div>
+          <div class="mb-number">
+            <img class=""
+              src="https://storage.jualo.com/user_phones/4127959/phone_number412795920181030-21431-12vtyjm.jpg"
+              alt="Phone number412795920181030 21431 12vtyjm">
+          </div>
+        </div>
+      </div>
+    </div>
+    <a class="col-6 text-center seller-information nego_modal nego_bg" href="#">
+      <h4>Nego Harga</h4>
+    </a>
+  </div>
+</div>

@@ -1,0 +1,53 @@
+<div class="product-detail__user">
+  <div class="user-info-details">
+    <div class="user">
+      <div class="user__photo">
+        <a onclick="ga('send', 'event', 'Ad/Product', 'goto seller profile', 'Yamaha Xmax Tahun 2017 - 1783787079');"
+          href="https://www.jualo.com/pengguna/3667779">
+          <%= image_tag("https://www.jualo.com/assets/noavatar-8c11c7c8dd0aaccd941b0ca4d86be3f5d08075272faa0c2c6b0ec2bd06943830.png",
+            alt: "Noavatar", backup_img: "avatar") %>
+        </a>
+      </div>
+      <div class="user__name">
+        <!-- <a href="https://www.jualo.com/pengguna/3667779">Anggi jingga</a> -->
+        <%= link_to product.user.username, "#" %>
+      </div>
+      <div class="user__location">
+      </div>
+    </div>
+    <a class="user-profile-link" href="https://www.jualo.com/pengguna/3667779">Lihat Profile Penjual
+      <i class="fa fa-angle-right"></i>
+    </a>
+  </div>
+  <div class="user-activity-details">
+    <div class="row">
+      <div class="col-4">
+        <div class="user-activity-label">
+          Verifikasi
+        </div>
+        <div class="user-activity-value">
+          <div class="unverified">
+            <span class="icon icon_unverified icon-margin"></span>
+            Belum
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="user-activity-label">
+          Terakhir Aktif
+        </div>
+        <div class="user-activity-value">
+          6 hari lalu
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="user-activity-label">
+          Chat dibalas
+        </div>
+        <div class="user-activity-value">
+          Belum Ada
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

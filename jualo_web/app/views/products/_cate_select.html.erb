@@ -1,0 +1,25 @@
+<div class="product-details-container-with-seller-and-more-ads">
+  <div class="col-12 product-detail__head">
+    <div class="product-detail__head-tree">
+      <%= link_to "Home", root_path %>
+      <%= content_tag(:span, class: "arrow") do %>
+        &gt;
+      <% end %>
+      <%= link_to "#" do %>
+        <%= product.product.category.name %>
+      <% end %>
+      <%= content_tag(:span, class: "arrow") do %>
+        &gt;
+      <% end %>
+      <!-- <%= link_to "#" do %>
+        Yamaha in Bandung City, West Java
+      <% end %>
+      <%= content_tag(:span, class: "arrow") do %>
+        &gt;
+      <% end %> -->
+      <%= content_tag(:span, class: "current-cat") do %>
+        <%= product.product.name %>
+      <% end %>
+    </div>
+  </div>
+</div>

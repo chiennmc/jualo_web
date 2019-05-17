@@ -15,6 +15,8 @@ class StaticPagesController < ApplicationController
 
 
   def get_product(id)
+    # Change limit method to last method to get 6 value is added final
+
     Product.joins(:pro_details, :category)
             .select("pro_details.id", "products.name", "pro_details.price")
             .where(category_id: id).limit(6)
