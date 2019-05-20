@@ -14,7 +14,7 @@
         <div class="pull-right">
           <div class="main-header__location">
             <span class="icon icon_lokasi"></span>
-            <span class="location-name">pilih lokasi</span>
+            <!-- <span class="location-name">pilih lokasi</span> -->
             <span class="icon-dropdown icon_dropdown-white"></span>
           </div>
           <div class="location-dropdown">
@@ -42,7 +42,7 @@
               <span class="twitter-typeahead" style="position: relative; display: inline-block;"><input
                   autocomplete="off" class="js-searchbox tt-input"
                   data-suggest-url="https://www.jualo.com/categories/add_search_suggestion" id="keyword" name="keyword"
-                  placeholder="cari iklan" type="text" spellcheck="false" dir="auto"
+                  placeholder="search for ads" type="text" spellcheck="false" dir="auto"
                   style="position: relative; vertical-align: top;">
                 <pre aria-hidden="true"
                   style="position: absolute; visibility: hidden; white-space: pre; font-family: ArialMT; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: capitalize;"></pre>
@@ -57,7 +57,7 @@
                 <span class="icon icon_close_fix"></span>
               </div>
               <span class="icon icon_close hide" onclick="clear_category()"></span>
-              <div class="search-category">
+              <!-- <div class="search-category">
                 <input class="hidden" name="category" type="text">
                 <span class="category-name">
                   semua kategori
@@ -136,24 +136,24 @@
                       </a></div>
                   </ul>
                 </div>
-              </div>
+              </div> -->
               <input class="button icon icon_search" onclick="setCookie('gtm_search', true);" type="submit">
             </form>
           </div>
           <div class="main-header__placing-ad">
-            <a class="header_new_ad initiate-post-product" href="/iklan/pasang-iklan-gratis">
-              <span class="icon icon-pasang-iklan"></span>
-              <span class="text">Placing ad</span>
-            </a>
+            <%= link_to "#", class: "header_new_ad initiate-post-product" do %>
+              <%= content_tag(:span, "", class: "icon icon-pasang-iklan") %>
+              <%= content_tag(:span, "Placing ad" ,class: "text") %>
+            <% end %>
           </div>
           <div class="account-not-signin main-header__account" id="dropdown">
-            <span class="icon icon_akun"></span>
-            <span class="icon icon_akun2"></span>
+            <%= content_tag(:span, "",class: "icon icon_akun") %>
+            <%= content_tag(:span, "",class: "icon icon_akun2") %>
             <div class="account-dropdown">
               <% if current_user.nil? %>
-                <%= render "layouts/not_login" %>
+              <%= render "layouts/not_login" %>
               <% else %>
-                <%= render "layouts/is_login" %>
+              <%= render "layouts/is_login" %>
               <% end %>
             </div>
           </div>

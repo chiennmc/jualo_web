@@ -673,12 +673,12 @@
     background: url("   ") -50px -521px
       no-repeat;
   }
-  .icon_angle-pointing-to-left {
-    width: 32px;
-    height: 32px;
-    background: url("   ") -92px -521px
-      no-repeat;
-  }
+  // .icon_angle-pointing-to-left {
+  //   width: 32px;
+  //   height: 32px;
+  //   background: url("   ") -92px -521px
+  //     no-repeat;
+  // }
   .icon_facebook {
     width: 32px;
     height: 32px;
@@ -7917,7 +7917,7 @@
   .product-slider-desktop .product-image__container {
     height: 80vh;
   }
-  .product-slider-desktop .product-image__next {
+  .product-slider-desktop .product-image__   {
     position: absolute;
     top: 50%;
     width: auto;

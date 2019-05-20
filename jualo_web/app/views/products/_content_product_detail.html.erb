@@ -16,26 +16,29 @@
           onclick="add_to_wishlist_from_ad_page(this)"></i>
       </div>
       <div class="share-ad-btn" id="share-ad-btn">
-        <img
-          src="https://www.jualo.com/assets/share-orange-7a393cfcfd11441dbe1b567568af463693f44328f5ac57a44f258a846bf180a2.svg"
-          alt="Share orange">
+        <%= image_tag(
+          "https://www.jualo.com/assets/share-orange-7a393cfcfd11441dbe1b567568af463693f44328f5ac57a44f258a846bf180a2.svg",
+          alt: "Share orange"
+        ) %>
       </div>
       <div class="hide shareWrapper" id="shareBlock">
         <i class="arrow-up">
-          <img
-            src="https://www.jualo.com/assets/icons/up-arrow-f937b5c9bfe8a79ed1ce4ccaa82b7fdec30baa5470a58c5aadeba17c26889e0c.svg"
-            alt="Up arrow">
+          <%= image_tag(
+            "https://www.jualo.com/assets/icons/up-arrow-f937b5c9bfe8a79ed1ce4ccaa82b7fdec30baa5470a58c5aadeba17c26889e0c.svg",
+            alt: "Up arrow"
+          ) %>
         </i>
         <div class="col-12 share-container-title">
-          BAGIKAN IKLAN INI
+          SHARE THIS ADVERT
         </div>
         <div class="col-12 shareContainer">
-          <a class="copy-link js-copy-link-share">
-            <img
-              src="https://www.jualo.com/assets/share-link-9add885c2c62358e8fe61d6912971a8afd048c91f575d13df6310a981e5e7ddc.svg"
-              alt="Share link">
-            <div class="copied hide">Copied!</div>
-          </a>
+          <%= link_to class: "copy-link js-copy-link-share" do %>
+          <%= image_tag(
+            "https://www.jualo.com/assets/share-link-9add885c2c62358e8fe61d6912971a8afd048c91f575d13df6310a981e5e7ddc.svg",
+            alt: "Share link"
+          ) %>
+          <div class="copied hide">Copied!</div>
+          <% end %>
           <a class="whatsapp"
             href="https://web.whatsapp.com/send?text=Hi%2C%20sepertinya%20kamu%20akan%20suka%20iklan%20ini%21%20Cek%20link%20berikut%3A%20https%3A%2F%2Fwww.jualo.com%2Fiklan%2Fyamaha-xmax-tahun-2017.3667779"
             rel="nofollow" target="_blank">
@@ -140,15 +143,16 @@
             PENJUAL
           </div>
           <div class="mb-number">
-            <img class=""
-              src="https://storage.jualo.com/user_phones/4127959/phone_number412795920181030-21431-12vtyjm.jpg"
-              alt="Phone number412795920181030 21431 12vtyjm">
+            <%= image_tag(
+              "https://storage.jualo.com/user_phones/4127959/phone_number412795920181030-21431-12vtyjm.jpg",
+              alt: "Phone number412795920181030 21431 12vtyjm"
+            ) %>
           </div>
         </div>
       </div>
     </div>
-    <a class="col-6 text-center seller-information nego_modal nego_bg" href="#">
-      <h4>Nego Harga</h4>
-    </a>
+    <%= link_to "#", class: "col-6 text-center seller-information nego_modal nego_bg" do %>
+    <h4>Price Negotiable</h4>
+    <% end %>
   </div>
 </div>
