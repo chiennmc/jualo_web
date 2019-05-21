@@ -1,13 +1,13 @@
 <ul class="category__container">
   <% @categories.each do |category| %>
   <li class="category__menu">
-    <a data-id="127" class="category__link" onclick="document.cookie='category_ids=127_59_40_57_119_38_79_42'">
+    <%= link_to category, class: "category__link" do %>
       <%= content_tag(:span, "", class: "icon icon_kategori-motor") %>
       <%= content_tag(:span, class: "name") do %>
       <%= category.name %>
       <%= content_tag(:span, "hot", class:"hot") %>
       <% end %>
-    </a>
+    <% end %>
   </li>
   <% end %>
 </ul>

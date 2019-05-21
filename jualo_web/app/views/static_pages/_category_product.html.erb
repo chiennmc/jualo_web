@@ -1,12 +1,13 @@
 <section class="full-width main-content home-category-ad-listing">
   <div class="container">
-    <%= render partial: "list_product", 
+    <%= render partial: "list_category", 
       locals: { 
-        products: @product_motors, title_product: "Motor Sale Ads", 
+        products: @product_motors, 
+        title_product: "Motor Sale Ads", 
         image_error: "https://storage.jualo.com/big_thumb/19496363/yamaha-vega-zr-2009-motor-yamaha-19496363.jpg" 
       } 
-    %>  
-    <%= render partial: "list_product", 
+    %>
+    <%= render partial: "list_category", 
       locals: { 
         products: @product_cars,   
         title_product: "Car Sale Ads",

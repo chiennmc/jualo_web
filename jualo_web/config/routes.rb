@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :products, only: [:index, :show]
+  resources :brands,        only: [:index, :show]
+  resources :categories,    only: [:index, :show]
+  resources :products,      only: [:index, :show]
   get  "products/index"
   get  "products/show"
   root "static_pages#home"

@@ -1,0 +1,85 @@
+<div class="category-listing__nav">
+  <div class="col-12 category-listing__nav-head">
+    <div class="pull-left">
+      <%= content_tag(:span) do %>
+      <%= link_to "Home", "/" %>
+      <% end %>
+      <%= content_tag(:span, class: "arrow") do %>
+      &gt;
+      <% end %>
+      <%= link_to "#" do %>
+      <%= category.name %>
+      <% end %>
+    </div>
+    <div class="pull-right">
+      search results found
+      <%= content_tag(:span, products.length) %>
+    </div>
+  </div>
+  <div class="col-12 category-listing__nav-content">
+    <div class="pull-left">
+      <div class="category-listing__location">
+        <%= content_tag(:span, "", class: "icon icon_location") %>
+        <input type="text" name="lokasi" id="lokasi" placeholder="Cari Berdasarkan Lokasi..." autocomplete="off">
+        <div class="clear-location">
+          <%= content_tag(:span, "", class: "icon icon_close") %>
+        </div>
+      </div>
+      <div class="category-listing__suggestion">
+        <ul class="category-listing__suggestion-list"></ul>
+      </div>
+    </div>
+    <div class="pull-right">
+      <div class="category-listing__type">
+        <label>
+          <%= link_to "#" do %>
+          <!-- <a onclick="setCookie('applied_filter', true);" href="/motor/sparepart-motor"> -->
+          <input checked="" class="milan-radio" name="tipe-produk" type="radio">
+          <span> </span>
+          all
+          <!-- </a> -->
+          <% end %>
+        </label>
+        <label>
+          <%= link_to "#" do %>
+          <!-- <a onclick="setCookie('applied_filter', true);" href="/motor/sparepart-motor/baru"> -->
+          <input class="milan-radio" name="tipe-produk" type="radio">
+          <span></span>
+          new
+          <!-- </a> -->
+          <% end %>
+        </label>
+        <label>
+          <%= link_to "#" do %>
+          <!-- <a onclick="setCookie('applied_filter', true);" href="/motor/sparepart-motor/bekas"> -->
+          <input class="milan-radio" name="tipe-produk" type="radio">
+          <span></span>
+          former
+          <!-- </a> -->
+          <% end %>
+        </label>
+      </div>
+      <div class="category-listing__sort">
+        <%= content_tag(:span, "", class: "icon icon_sort") %>
+
+        <select name="sort_by" id="sort_by" class="jualo_select sort_by" onchange="$('#filter_category').submit()">
+          <option value="">
+            Sort by
+          </option>
+          <option value="date">
+            The latest
+          </option>
+          <option value="price_low_to_high">
+            Cheapest
+          </option>
+          <option value="price_high_to_low">
+            Most expensive
+          </option>
+        </select>
+        <%= content_tag(:span, "", class: "icon icon_dropdown") %>
+      </div>
+    </div>
+  </div>
+
+  <%= render "contents/suggest" %>
+</div>  

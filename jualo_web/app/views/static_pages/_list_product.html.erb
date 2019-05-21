@@ -1,43 +1,44 @@
-<div class="row category-row">
-  <div class="col-12 category-listing__ads_title">
-    <div class="pull-left">
-      <%= content_tag(:span, title_product, class:"product-heading-text") %>
-    </div>
-    <div class="pull-right">
-      <div class="button-action text-center">
-        <%= link_to "See all", "#", class: "button button--small button--green" %>
+<div class="category-listing__ads">
+  <% products.each do |product| %>
+  <div class="product-item">
+    <%= link_to product do %>
+    <div class="product-item__head">
+      <div class="product-item__badge"></div>
+      <div class="product-item__image">
+        <% if !ProImage.find_by(pro_detail_id: product.id).nil? && ProImage.find_by(pro_detail_id: product.id).is_card %>
+        <%= image_tag ProImage.find_by(pro_detail_id: product.id).image %>
+        <% else %>
+        <%= image_tag image_error %>
+        <% end %>
+        <%= content_tag(:span, class:"mask") %>
       </div>
     </div>
-  </div>
-  <div class="col-12">
-    <div class="category-listing__ads">
-      <% products.each do |product| %>
-      <div class="product-item">
-        <%= link_to product do %>
-        <div class="product-item__head">
-          <div class="product-item__badge">
-          </div>
-          <div class="product-item__image">
-            <% if !ProImage.find_by(pro_detail_id: product.id).nil? && ProImage.find_by(pro_detail_id: product.id).is_card %>
-            <%= image_tag ProImage.find_by(pro_detail_id: product.id).image %>
-            <% else %>
-            <%= image_tag image_error %>
-            <% end %>
-            <%= content_tag(:span, class:"mask") %>
-          </div>
+    <div class="product-item__body">
+      <div class="product-item__name product-item__name--small">
+        <%= product.name %>
+      </div>
+      <div class="product-item__price product-item__price--small">
+        <%= product.price %>
+      </div>
+      <% if is_category %>
+      <div class="product-item__option">
+        <div class="product-item__info">
+          <%= product.status %>
         </div>
-        <div class="product-item__body">
-          <div class="product-item__name">
-            <%= link_to  product.name %>
-          </div>
-          <div class="product-item__price">
-            Rp <%= link_to  product.price %>
-          </div>
+      </div>
+      <div class="product-item_footer">
+        <div class="product-item__location">
+          Kab. Polewali Mandar, West Sulawesi
         </div>
-        <% end %>
-        <div class="favourite-badge icon_fav1" data-ad-id="1783635315" onclick="add_to_wishlist(this)"></div>
+        <div class="product-item__extra">
+        </div>
       </div>
       <% end %>
     </div>
+    <% end %>
+    <%= link_to class: "wishlist-toggle" do %>
+    <%= content_tag(:span, "", class: "favourite-badge icon_fav1") %>
+    <% end %>
   </div>
+  <% end %>
 </div>

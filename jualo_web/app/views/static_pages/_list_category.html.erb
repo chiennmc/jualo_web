@@ -1,0 +1,21 @@
+<div class="row category-row">
+  <div class="col-12 category-listing__ads_title">
+    <div class="pull-left">
+      <%= content_tag(:span, title_product, class:"product-heading-text") %>
+    </div>
+    <div class="pull-right">
+      <div class="button-action text-center">
+        <%= link_to "See all", "#", class: "button button--small button--green" %>
+      </div>
+    </div>
+  </div>
+  <div class="col-12">
+    <%= render partial: "list_product", 
+      locals: {
+        products: products,
+        image_error: image_error,
+        is_category: false
+      } 
+    %>
+  </div>
+</div>
