@@ -42,3 +42,7 @@
   </div>
   <% end %>
 </div>
+
+<% unless is_home %>
+  <%= paginate products %>  
+<% end %>

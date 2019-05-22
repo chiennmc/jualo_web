@@ -12,7 +12,8 @@ class CategoriesController < ApplicationController
     def set_product
       @products = Product.joins(:pro_details, :category)
             .select("pro_details.id", "products.name", "products.status" , "pro_details.price")
-            .where(category_id: params[:id]) 
+            .where(category_id: params[:id])
+            .page(params[:page])
     end
     
     def set_category

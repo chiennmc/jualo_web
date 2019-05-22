@@ -2,8 +2,6 @@ Rails.application.routes.draw do
   resources :brands,        only: [:index, :show]
   resources :categories,    only: [:index, :show]
   resources :products,      only: [:index, :show]
-  get  "products/index"
-  get  "products/show"
   root "static_pages#home"
   # root "products#show"
   devise_for :users

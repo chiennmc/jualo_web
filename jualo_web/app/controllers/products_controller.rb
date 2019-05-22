@@ -1,7 +1,8 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:index, :show]
+  before_action :set_product, only: [:show]
 
   def index
+    @category = Category.first
   end
 
   def show
@@ -12,5 +13,5 @@ class ProductsController < ApplicationController
     def set_product
       @product_detail = ProDetail.find(params[:id])
     end
-  
+    
 end

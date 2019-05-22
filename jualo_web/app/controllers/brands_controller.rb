@@ -14,6 +14,7 @@ class BrandsController < ApplicationController
       @products = Product.joins(:pro_details, :category)
             .select("pro_details.id", "products.name", "products.status" , "pro_details.price")
             .where(category_id: @categories)
+            .page(params[:page])
     end
 
     def set_categories

@@ -13,137 +13,44 @@
         </div>
         <div class="pull-right">
           <div class="main-header__location">
-            <span class="icon icon_lokasi"></span>
-            <!-- <span class="location-name">pilih lokasi</span> -->
-            <span class="icon-dropdown icon_dropdown-white"></span>
+            <%= content_tag(:span, "", class: "icon icon_lokasi") %>
+            <%= content_tag(:span, "", class: "icon-dropdown icon_dropdown-white") %>
           </div>
-          <div class="location-dropdown">
-            <div class="location-dropdown__container" id="location-dropdown__container">
-              <div class="location-dropdown__input">
-                <input autocomplete="off" class="search_location_field" name="lokasi" placeholder="Ketik Lokasi Anda..."
-                  type="text">
-                <span class="icon">x</span>
-              </div>
-            </div>
-            <div class="location-dropdown__scroll-down">
-              <span class="icon icon_dropdown-black"></span>
-            </div>
-          </div>
-          <!-- <div class="location-popup">
-            <p>
-              Ganti lokasi kamu di sini, untuk mendapatkan hasil yang lebih akurat
-            </p>
-            <span class="icon icon_close-white"></span>
-          </div> -->
+
           <div class="main-header__search">
-            <form action="/categories/search/" class="search" method="post">
-              <input class="hidden" id="search" name="search" type="text" value="">
-              <input class="hidden" id="category" name="category" type="text">
-              <span class="twitter-typeahead" style="position: relative; display: inline-block;"><input
-                  autocomplete="off" class="js-searchbox tt-input"
-                  data-suggest-url="https://www.jualo.com/categories/add_search_suggestion" id="keyword" name="keyword"
-                  placeholder="search for ads" type="text" spellcheck="false" dir="auto"
-                  style="position: relative; vertical-align: top;">
+            <%= search_form_for @search, class: "search" do |f| %>      
+              <%= content_tag(:span, class: "twitter-typeahead", style: "position: relative; display: inline-block;") do %>
+                <%= f.search_field :name_cont,
+                  class: "js-searchbox tt-input",
+                  autocomplete: "off",
+                  placeholder: "search for ads",
+                  type: "text", 
+                  spellcheck: "false",
+                  dir: "auto",
+                  style: "position: relative; vertical-align: top;"
+                %> 
                 <pre aria-hidden="true"
                   style="position: absolute; visibility: hidden; white-space: pre; font-family: ArialMT; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: capitalize;"></pre>
                 <div class="tt-menu suggest-custom-menu"
                   style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none;">
                   <div class="tt-dataset tt-dataset-best-pictures"></div>
-                </div></span>
+                </div>
+              <% end %>
+
               <div class="icon_w_loader_header">
                 <i class="fa fa-spinner fa-spin"></i>
               </div>
               <div class="clear-search js-clear-w-input-search">
-                <span class="icon icon_close_fix"></span>
+                <%= content_tag(:span, "", class: "icon icon_close_fix") %>
               </div>
-              <span class="icon icon_close hide" onclick="clear_category()"></span>
-              <!-- <div class="search-category">
-                <input class="hidden" name="category" type="text">
-                <span class="category-name">
-                  semua kategori
-                </span>
-                <span class="icon icon_dropdown-black"></span>
-                <div class="category-dropdown">
-                  <ul class="category-dropdown__list">
-                    <li class="list-category col-12" data-id="127"
-                      onclick="document.cookie='category_ids=127_59_40_57_119_38_79_42'">
-                      <span class="icon icon_kategori-motor"></span>
-                      Motor
-                    </li>
-                    <li class="list-category col-12" data-id="59"
-                      onclick="document.cookie='category_ids=127_59_40_57_119_38_79_42'">
-                      <span class="icon icon_kategori-mobil"></span>
-                      Mobil
-                    </li>
-                    <li class="list-category col-12" data-id="40"
-                      onclick="document.cookie='category_ids=127_59_40_57_119_38_79_42'">
-                      <span class="icon icon_kategori-properti"></span>
-                      Properti
-                    </li>
-                    <li class="list-category col-12" data-id="57"
-                      onclick="document.cookie='category_ids=127_59_40_57_119_38_79_42'">
-                      <span class="icon icon_kategori-fashion"></span>
-                      Fashion
-                    </li>
-                    <li class="list-category col-12" data-id="119"
-                      onclick="document.cookie='category_ids=127_59_40_57_119_38_79_42'">
-                      <span class="icon icon_kategori-handphone-dan-gadget"></span>
-                      Handphone &amp; Gadget
-                    </li>
-                    <li class="list-category col-12" data-id="38"
-                      onclick="document.cookie='category_ids=127_59_40_57_119_38_79_42'">
-                      <span class="icon icon_kategori-kamera"></span>
-                      Kamera
-                    </li>
-                    <li class="list-category col-12" data-id="79"
-                      onclick="document.cookie='category_ids=127_59_40_57_119_38_79_42'">
-                      <span class="icon icon_kategori-jasa-dan-pekerjaan"></span>
-                      Jasa &amp; Pekerjaan
-                    </li>
-                    <li class="list-category col-12" data-id="42"
-                      onclick="document.cookie='category_ids=127_59_40_57_119_38_79_42'">
-                      <span class="icon icon_kategori-komputer-dan-elektronik"></span>
-                      Komputer &amp; Elektronik
-                    </li>
-                    <li class="list-category col-12" data-id="66748"
-                      onclick="document.cookie='category_ids=127_59_40_57_119_38_79_42'">
-                      <span class="icon icon_kategori-hobi-dan-aktivitas-outdoor"></span>
-                      Hobi &amp; Aktivitas Outdoor
-                    </li>
-                    <li class="list-category col-12" data-id="75"
-                      onclick="document.cookie='category_ids=127_59_40_57_119_38_79_42'">
-                      <span class="icon icon_kategori-kesehatan-dan-kecantikan"></span>
-                      Kesehatan &amp; Kecantikan
-                    </li>
-                    <li class="list-category col-12" data-id="53"
-                      onclick="document.cookie='category_ids=127_59_40_57_119_38_79_42'">
-                      <span class="icon icon_kategori-rumah-tangga-dan-industri"></span>
-                      Rumah Tangga &amp; Industri
-                    </li>
-                    <li class="list-category col-12" data-id="63"
-                      onclick="document.cookie='category_ids=127_59_40_57_119_38_79_42'">
-                      <span class="icon icon_kategori-perlengkapan-ibu-dan-anak"></span>
-                      Perlengkapan Ibu &amp; Anak
-                    </li>
-                    <li class="list-category col-12" data-id="67311"
-                      onclick="document.cookie='category_ids=127_59_40_57_119_38_79_42'">
-                      <span class="icon icon_kategori-acara-dan-hiburan"></span>
-                      Acara dan Hiburan
-                    </li>
-                    <div class="all-category col-12">
-                      <a class="button button--green button--block button--rounded button--small"
-                        href="/categories">Lihat Selengkapnya
-                      </a></div>
-                  </ul>
-                </div>
-              </div> -->
-              <input class="button icon icon_search" onclick="setCookie('gtm_search', true);" type="submit">
-            </form>
+              <%= f.submit class: "button icon icon_search" %>
+            <% end %>
+
           </div>
           <div class="main-header__placing-ad">
             <%= link_to "#", class: "header_new_ad initiate-post-product" do %>
-              <%= content_tag(:span, "", class: "icon icon-pasang-iklan") %>
-              <%= content_tag(:span, "Placing ad" ,class: "text") %>
+            <%= content_tag(:span, "", class: "icon icon-pasang-iklan") %>
+            <%= content_tag(:span, "Placing ad" ,class: "text") %>
             <% end %>
           </div>
           <div class="account-not-signin main-header__account" id="dropdown">
