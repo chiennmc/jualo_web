@@ -11,4 +11,16 @@ $(document).ready(function() {
   $('.bxslider').bxSlider()
 
   $('.bx-default-pager').remove()
+
+  $('#search_button').bind('click', function(){
+    search_value = $('#search_field').val()
+    debugger
+    if($.isNumeric(search_value)){
+      console.log("Number")
+    }else if(search_value.includes("#")){
+      console.log("#")
+    }else{
+      console.log(search_value)
+    }
+  })
 })

@@ -20,15 +20,17 @@
           <div class="main-header__search">
             <%= search_form_for @search, class: "search" do |f| %>      
               <%= content_tag(:span, class: "twitter-typeahead", style: "position: relative; display: inline-block;") do %>
-                <%= f.search_field :name_cont,
+                <%= f.search_field :name_or_status_cont,
+                  id:    "search_field",
                   class: "js-searchbox tt-input",
                   autocomplete: "off",
                   placeholder: "search for ads",
-                  type: "text", 
+                  type:  "text", 
                   spellcheck: "false",
-                  dir: "auto",
+                  dir:   "auto",
                   style: "position: relative; vertical-align: top;"
-                %> 
+                %>
+
                 <pre aria-hidden="true"
                   style="position: absolute; visibility: hidden; white-space: pre; font-family: ArialMT; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 400; word-spacing: 0px; letter-spacing: 0px; text-indent: 0px; text-rendering: auto; text-transform: capitalize;"></pre>
                 <div class="tt-menu suggest-custom-menu"
@@ -43,7 +45,7 @@
               <div class="clear-search js-clear-w-input-search">
                 <%= content_tag(:span, "", class: "icon icon_close_fix") %>
               </div>
-              <%= f.submit class: "button icon icon_search" %>
+              <%= f.submit class: "button icon icon_search", id: "search_button" %>
             <% end %>
 
           </div>

@@ -43,6 +43,6 @@
   <% end %>
 </div>
 
-<% unless is_home %>
+<% unless !is_home.nil? || is_home %>
   <%= paginate products %>  
 <% end %>

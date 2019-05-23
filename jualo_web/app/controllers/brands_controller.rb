@@ -11,14 +11,13 @@ class BrandsController < ApplicationController
   
   private
     def set_product
-      @products = Product.joins(:pro_details, :category)
-            .select("pro_details.id", "products.name", "products.status" , "pro_details.price")
-            .where(category_id: @categories)
-            .page(params[:page])
+      @products = get_product_paginate(category: @categories)
     end
 
     def set_categories
-      @categories = Category.joins(:brands, :brand_details).select("categories.id").where("brands.id": params[:id])
+      @categories = Category.joins(:brands, :brand_details)
+            .select("categories.id")
+            .where("brands.id": params[:id])
     end
     
     def get_value_spec

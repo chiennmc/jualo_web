@@ -1,6 +1,6 @@
 class CategoriesController < ApplicationController
-  before_action :set_product, only: [:index, :show]
-  before_action :set_category, only: [:index, :show]
+  before_action :set_product, only: [:show]
+  before_action :set_category, only: [:show]
 
   def index
   end
@@ -10,10 +10,7 @@ class CategoriesController < ApplicationController
 
   private
     def set_product
-      @products = Product.joins(:pro_details, :category)
-            .select("pro_details.id", "products.name", "products.status" , "pro_details.price")
-            .where(category_id: params[:id])
-            .page(params[:page])
+      @products = get_product_paginate(category: params[:id])
     end
     
     def set_category

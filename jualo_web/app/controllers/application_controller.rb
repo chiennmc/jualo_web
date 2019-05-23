@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
  
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :set_search
+
+  PER_PRODUCT_OF_PAGE = 20
  
   protected
  
@@ -14,8 +16,21 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit :account_update, keys: added_attrs
   end
 
+  # Search with name of product
   def set_search
     @search = Product.ransack(params[:q])
-    @products = @search.result(distinct: true)
+    @products_search = @search.result(distinct: true)
+    @products = get_product_paginate(id: @products_search)
   end
+
+  def get_products_detail(param)
+    Product.joins(:pro_details, :category)
+            .select("pro_details.id", "products.name", "products.status" , "pro_details.price")
+            .where(param)
+  end
+
+  def get_product_paginate(param)
+    get_products_detail(param).page(params[:page]).per(PER_PRODUCT_OF_PAGE)
+  end
+  
 end
