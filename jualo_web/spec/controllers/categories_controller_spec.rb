@@ -12,8 +12,18 @@ RSpec.describe CategoriesController, type: :controller do
   describe "GET #show" do
     it "returns http success" do
       get :show
-      expect(response).to have_http_status(:success)
+      expect(Category).to have_http_status(:success)
     end
-  end
 
+    it "returns products" do
+      get :show
+      expect(assigns(:products)).to eq([products]) 
+    end
+    
+    it "returns category" do
+      # expect(Category.count).to  
+    end
+    
+  end
+  
 end

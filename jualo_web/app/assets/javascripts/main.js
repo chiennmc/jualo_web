@@ -23,4 +23,6 @@ $(document).ready(function() {
       console.log(search_value)
     }
   })
+
+  $('label').remove()
 })

@@ -1,6 +1,6 @@
 class BrandsController < ApplicationController
-  before_action :set_categories, only: [:index, :show]
-  before_action :set_product, only: [:index, :show]
+  before_action :set_categories, only: [:show]
+  before_action :set_product, only: [:show]
   before_action :get_value_spec, only: [:show]
 
   def index

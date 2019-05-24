@@ -17,7 +17,26 @@
             <%= content_tag(:span, "", class: "icon-dropdown icon_dropdown-white") %>
           </div>
 
+
+          <!-- <%= simple_form_for :search, url: products_path, method: "GET", 
+            class: "search" do |f| %>
+            <%= content_tag(:span, class: "twitter-typeahead", style: "position: relative; display: inline-block;") do %>
+              <%= f.input :name,
+                id:    "search_field",
+                class: "js-searchbox tt-input",
+                autocomplete: "off",
+                placeholder: "search for ads",
+                type:  "text", 
+                spellcheck: "false",
+                dir:   "auto",
+                style: "position: relative; vertical-align: top;",
+                input_html: { value: "" } 
+              %>
+              <%= f.submit "Search" %>
+            <% end %>
+          <% end %> -->
           <div class="main-header__search">
+
             <%= search_form_for @search, class: "search" do |f| %>      
               <%= content_tag(:span, class: "twitter-typeahead", style: "position: relative; display: inline-block;") do %>
                 <%= f.search_field :name_or_status_cont,

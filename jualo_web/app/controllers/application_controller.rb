@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
  
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :set_search
+  # before_action :search_simple_form_for
 
   PER_PRODUCT_OF_PAGE = 20
  
